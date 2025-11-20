@@ -23,7 +23,6 @@ class Ball(
     private var isFirstUpdate = true
 
     init {
-        // TODO: Call reset()
         reset()
     }
 
@@ -41,6 +40,8 @@ class Ball(
 
         //I DID THIS BASED ON THE EQUATIONS WHICH IS WHAT IT SAID TO DO
         val a0x = accX //initializing the a_0 and a_1s (it matches the equations better this way)
+        // val v0x = velocityX
+        // val v0y = velocityY
         val a0y = accY
         val a1x = xAcc
         val a1y = yAcc
@@ -104,8 +105,11 @@ class Ball(
     fun reset() {
         // TODO: implement the reset function
         // (Reset posX, posY, velocityX, velocityY, accX, accY, isFirstUpdate)
-        posX = backgroundWidth / 2f - ballSize/2
-        posY = backgroundHeight / 2f - ballSize/2
+        // posX = backgroundWidth / 2f - ballSize/2
+        // posY = backgroundHeight / 2f - ballSize/2
+
+        posX = backgroundWidth / 2f - ballSize / 2f
+        posY = backgroundHeight / 2f - ballSize / 2f
 
         velocityX = 0f
         velocityY = 0f
