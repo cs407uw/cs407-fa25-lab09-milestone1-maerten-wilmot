@@ -56,6 +56,7 @@ class Ball(
         accX = a1x //update
         accY = a1y //update
 
+        checkBoundaries()
     }
 
     /**
