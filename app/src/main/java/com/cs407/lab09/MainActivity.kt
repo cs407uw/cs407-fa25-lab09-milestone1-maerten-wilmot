@@ -138,7 +138,7 @@ fun GameScreen(viewModel: BallViewModel) {
         val ballPosition by viewModel.ballPosition.collectAsStateWithLifecycle()
 
         // Placeholder, remove when TODO is done:
-        val ballPosition = Offset.Zero
+//        val ballPosition = Offset.Zero
 
         Box(
             modifier = Modifier

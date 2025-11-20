@@ -38,21 +38,25 @@ class Ball(
             return
         }
 
+        val v0x = velocityX
+        val v0y = velocityY
         //I DID THIS BASED ON THE EQUATIONS WHICH IS WHAT IT SAID TO DO
         val a0x = accX //initializing the a_0 and a_1s (it matches the equations better this way)
-        // val v0x = velocityX
-        // val v0y = velocityY
         val a0y = accY
         val a1x = xAcc
         val a1y = yAcc
 
-        //EQUATION 1
-        velocityX += 0.5f * (a0x + a1x) * dT //update
-        velocityY += 0.5f *(a0y+a1y)*dT //update
+
 
         //EQUATION 2
-        posX += velocityX * dT + (1f/6f) * (dT*dT) * (3*a0x+a1x) //update
-        posY += velocityY * dT + (1f/6f) * (dT*dT) * (3*a0y+a1y) //update
+//        posX += velocityX * dT + (1f/6f) * (dT*dT) * (3*a0x+a1x) //update
+//        posY += velocityY * dT + (1f/6f) * (dT*dT) * (3*a0y+a1y) //update
+        posX += v0x * dT + (1f/6f) * (dT*dT) * (3*a0x+a1x) //update
+        posY += v0y * dT + (1f/6f) * (dT*dT) * (3*a0y+a1y) //update
+
+        //EQUATION 1
+        velocityX = v0x + 0.5f * (a0x + a1x) * dT //update
+        velocityY = v0y + 0.5f *(a0y+a1y)*dT //update
 
         accX = a1x //update
         accY = a1y //update
