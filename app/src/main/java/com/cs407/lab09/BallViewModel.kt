@@ -49,8 +49,8 @@ class BallViewModel : ViewModel() {
                 // Hint: The sensor's x and y-axis are inverted
                 // currentBall.updatePositionAndVelocity(xAcc = ..., yAcc = ..., dT = ...)
                 currentBall.updatePositionAndVelocity(
-                    xAcc = event.values[0] * 5f,
-                    yAcc = -event.values[1] *5f, // Invert y-axis (sensor y up, screen y down)
+                    xAcc = -event.values[0] * 5f,
+                    yAcc = event.values[1] *5f, // Invert y-axis (sensor y up, screen y down)
                     dT = dT
                 )
 
